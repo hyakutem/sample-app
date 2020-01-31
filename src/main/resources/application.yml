@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - info
+        - health
+        - metrics
+        - beans
+        - conditions
+        - configprops
+        - env
+        - mappings
+        - threaddump
+        - shutdown
+  endpoint:
+    health:
+      show-details: ALWAYS
