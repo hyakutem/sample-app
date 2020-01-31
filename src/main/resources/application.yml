@@ -1,6 +1,8 @@
 server:
   port: 8080
 
+app.title: reactive-app
+
 # Actuator
 management:
   endpoints:
@@ -20,3 +22,5 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+    shutdown:
+      enabled: true
