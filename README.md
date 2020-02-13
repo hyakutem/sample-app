@@ -26,8 +26,11 @@ docker run --rm -p 8080:8080 -e APP_TITLE=sample-app5 sample-app:0.0.1-SNAPSHOT
 ```
 curl http://localhost:8080
 curl http://localhost:8080/delay/1000
+curl http://localhost:8080/randomDelay/3000
 curl http://localhost:8080/actuator/health
 ```
+
+※randomDelay/3000は、0[ms]~3000[ms]の間のランダムな[ms]経過後に"OK"を返す
 
 ```
 curl http://localhost:8080/actuator/ |jq .
