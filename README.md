@@ -15,11 +15,30 @@ sample-app                           0.0.1-SNAPSHOT      ab435d570bab        11 
 :
 ```
 
+### push image to GitLab
+
+```
+docker login registry.recruit-tech.co.jp
+```
+
+```
+docker tag sample-app:0.0.1-SNAPSHOT registry.recruit-tech.co.jp/hyakutake/sample-app:0.0.1-SNAPSHOT
+docker push registry.recruit-tech.co.jp/hyakutake/sample-app:0.0.1-SNAPSHOT
+```
+
+
 ## Run application container
 
 ```
 docker run --rm -p 8080:8080 -e APP_TITLE=sample-app5 sample-app:0.0.1-SNAPSHOT
 ```
+
+or (use pushed image to GitLab)
+
+```
+docker run --rm -p 8080:8080 -e APP_TITLE=sample-app5 registry.recruit-tech.co.jp/hyakutake/sample-app:0.0.1-SNAPSHOT
+```
+
 
 ### Operation check
 
