@@ -1,7 +1,7 @@
 ## build docker image
 
 ```
-git clone https://gitlab.raftel.in/hyakutake/sample-app.git
+git clone https://github.com/hyakutem/sample-app.git
 cd sample-app/
 ./gradlew bootBuildImage
 ```
@@ -18,12 +18,12 @@ sample-app                           0.0.1-SNAPSHOT      ab435d570bab        11 
 ### push image to GitLab
 
 ```
-docker login registry.recruit-tech.co.jp
+docker login
 ```
 
 ```
-docker tag sample-app:0.0.1-SNAPSHOT registry.recruit-tech.co.jp/hyakutake/sample-app:0.0.1-SNAPSHOT
-docker push registry.recruit-tech.co.jp/hyakutake/sample-app:0.0.1-SNAPSHOT
+docker tag sample-app:0.0.1-SNAPSHOT hyakutem/sample-app:0.0.1-SNAPSHOT
+docker push hyakutem/sample-app:0.0.1-SNAPSHOT
 ```
 
 
@@ -36,7 +36,7 @@ docker run --rm -p 8080:8080 -e APP_TITLE=sample-app5 sample-app:0.0.1-SNAPSHOT
 or (use pushed image to GitLab)
 
 ```
-docker run --rm -p 8080:8080 -e APP_TITLE=sample-app5 registry.recruit-tech.co.jp/hyakutake/sample-app:0.0.1-SNAPSHOT
+docker run --rm -p 8080:8080 -e APP_TITLE=sample-app5 hyakutake/sample-app:0.0.1-SNAPSHOT
 ```
 
 
