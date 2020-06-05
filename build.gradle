@@ -34,3 +34,27 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+jar {
+	enabled = true
+}
+
+bootJar {
+	launchScript()
+	layered()
+}
+
+bootBuildImage {
+	imageName = "hyakutem/${project.name}"
+}
+
+springBoot {
+	buildInfo {
+		properties {
+			artifact = 'sample-app'
+			version = '0.0.2-SNAPSHOT'
+			group = 'com.example'
+			name = 'Sample application'
+		}
+	}
+}
